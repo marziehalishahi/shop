@@ -1,9 +1,9 @@
 <script setup>
-import Shop from './components/Shop.vue'
+import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
-  <Shop />
+  <Navbar />
 </template>
 
 <style scoped>

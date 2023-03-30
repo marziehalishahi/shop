@@ -1,37 +1,37 @@
 <script setup>
 import { ref } from 'vue'
-import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/vue/24/outline'
+import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
 
 </script>
 
 <template>
     <nav class="menubar">
-        <div class="menubar_logo">
+        <div class="menubar__logo">
             <img src="../assets/images/images.svg">
         </div>
         <div>
-            <ul class="menubar_items">
+            <ul class="menubar__items">
                 <li>Men</li>
                 <li>Women</li>
                 <li>Beauty</li>
                 <li>Sport</li>
-                <li>Templates</li>
+                <li>Templates <ChevronDownIcon class="w-4 h-4 text-gray-400 inline-block"/></li>
                 <li>Explore</li>
             </ul>
         </div>
 
-        <div class="menubar_interactions">
+        <div class="menubar__interactions">
             <div>
                 <UserIcon class="w-8 h-8 text-black"></UserIcon>
             </div>
             <div>
                 <MagnifyingGlassIcon class="w-8 h-8 text-black"></MagnifyingGlassIcon>
             </div> 
-            <div class="shopping_cart">
+            <div class="menubar__shopping_cart">
                 <ShoppingCartIcon class="w-8 h-8 text-black">
 
                 </ShoppingCartIcon>
-                <span class="shopping_cart_count"><span style="margin-top: 1px;">1</span></span>
+                <div class="menubar__shopping_cart_count menubar__shopping_cart--position">1</div>
             </div>
         </div>
     </nav>
@@ -47,29 +47,32 @@ nav.menubar {
     align-items: center;
     height: 100px;
 }
-.menubar_logo img{
+.menubar__logo img{
     object-fit: cover;
     width: auto;
     height: 90px;
 }
-.menubar_items{
+.menubar__items{
     display: flex;
     justify-content: center;
     gap: 30px;
     font-size: 1.8rem;
     font-weight: 400;
 }
-.menubar_interactions{
+.menubar__items li:nth-child(5):hover{
+    cursor: pointer;
+}
+.menubar__interactions{
     display: flex;
     justify-content: center;
     gap: 30px;
     font-size: 1.8rem;
     font-weight: 400;
 }
-.shopping_cart{
+.menubar__shopping_cart{
     position: relative;
 }
-.shopping_cart_count{
+.menubar__shopping_cart_count{
     position: absolute;
     text-align: center;
     background-color: aqua;
@@ -80,5 +83,10 @@ nav.menubar {
     font-size: .7rem;
     right: -7px;
     top: -6px;
+}
+.menubar__shopping_cart--position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
