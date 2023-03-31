@@ -21,23 +21,26 @@ onMounted(() => {
         </div>
         <div class="flex items-center h-full">
             <ul class="h-full menubar__items">
-                <li>Men </li>
-                <li>Women</li>
-                <li>Beauty</li>
-                <li>Sport</li>
-                <li>
-                    <div class="menubar__templates"><span> Templates</span>
+                <li class="menubar__list"><span class="menubar__background">Men</span> </li>
+                <li class="menubar__list"><span class="menubar__background">Women </span> </li>
+                <li class="menubar__list"><span class="menubar__background">Beauty</span> </li>
+                <li class="menubar__list"><span class="menubar__background">Sport </span> </li>
+                <li class="menubar__list">
+                    <div class="menubar__templates"><span class="menubar__background"> Templates
                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                    </span>
                     </div>
                 </li>
-                <li>
+                <li class="menubar__list menubar_list--explore">
                     <div class="menubar__explore">
-                        <span>Explore </span>
-                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                        <span class="menubar__background">Explore 
+                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                        </span>
                         <ul class="menubar__explore--items">
                             <li>Men </li>
-                            <li class="relative">Women  <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                <ul class="absolute right-[-40px] w-20 bg-black h-36"></ul>
+                            <li>Women
+                                <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                                <ul class="menubar__items--subtype "></ul>
                             </li>
                             <li>Beauty</li>
                             <li>Sport</li>
@@ -98,19 +101,24 @@ nav.menubar {
     gap: 30px;
     font-size: 1.2rem;
     font-weight: 500;
+    position: relative;
 }
-
-.menubar__items li {
+span.menubar__background:hover{
+    cursor: pointer;
+    background-color: azure;
+    border-radius: 2rem;
+}
+span.menubar__background{
     padding: .5rem 1rem;
 }
 
 /* body .menubar__templates:hover ~ .menubar__megamenu{
     display: block;
 } */
-.menubar__items li:hover {
-    cursor: pointer;
-    background-color: azure;
-    border-radius: 2rem;
+li.menubar__list{
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .menubar__interactions {
@@ -144,14 +152,15 @@ nav.menubar {
     align-items: center;
     justify-content: center;
 }
+
 .menubar__explore{
     position: relative;
 }
-.menubar__explore:hover .menubar__explore--items{
+.menubar_list--explore:hover .menubar__explore--items{
     height: auto;
     width: 120px;
 }
-.menubar__explore:hover .menubar__explore--items li{
+.menubar_list--explore:hover .menubar__explore--items li{
     opacity: 1;
 }
 ul.menubar__explore--items{
@@ -164,18 +173,38 @@ ul.menubar__explore--items{
     transition-delay: 100ms;
     top: 40px;
 }
+
 .menubar__explore--items li {
     font-size: .8rem;
     opacity: 0;
     transition-delay: 100ms;
     display: flex;
     justify-content: space-between;
+    padding: 4px 8px;
+}
+
+.menubar__explore--items li:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+ul.menubar__items--subtype{
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color: black;
+    height: 100px;
+}
+.menubar__explore--items li:hover ul.menubar__items--subtype{
+    transform: scale(1, 1)
 }
 .menubar__megamenu {
     position: absolute;
     width: 100%;
     height: 300px;
-    background-color: white;
+    background-color: black;
     top: 0;
     margin-top: 100px;
     display: none;
