@@ -1,11 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import ShoppingCart from '@/ShoppingCart.vue'
 import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
 
-let cart = ref(false);
-const toggleCart = ()=>{
-    cart.value = !cart.value;
-}
+
 // onMounted(()=>{console.log(cart.value ? 'yeds' : 'ndo')})
 </script>
 
@@ -20,14 +17,14 @@ const toggleCart = ()=>{
                 <li class="menubar__list"><span class="menubar__background">Women </span> </li>
                 <li class="menubar__list"><span class="menubar__background">Beauty</span> </li>
                 <li class="menubar__list"><span class="menubar__background">Sport </span> </li>
-                <li class="menubar__list">
+                <li class="menubar__list menubar__list--megamenu">
                     <div 
                      class="menubar__templates">
                         <span class="menubar__background"> Templates
                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
                     </span>
                     </div>
-                    <div class="menubar__megamenu "></div>
+                    <div class="menubar__megamenu"></div>
 
                 </li>
                 <li class="menubar__list menubar_list--explore">
@@ -58,17 +55,7 @@ const toggleCart = ()=>{
                 <MagnifyingGlassIcon class="w-6 h-6 text-black"></MagnifyingGlassIcon>
 
             </div>
-            <div @click="toggleCart" class="menubar__shopping_cart" >
-
-                <div class='menubar__shopping_cart--background' >
-                    <ShoppingCartIcon class="w-6 h-6 text-black">
-
-                    </ShoppingCartIcon>
-                </div>
-                
-                <div class="menubar__shopping_cart_count menubar__shopping_cart--position">1</div>
-                <div :class="{'menubar__shopping_cart--details' : cart}"></div>
-            </div>
+            <ShoppingCart/>
         </div>
 
     </nav>
@@ -127,45 +114,7 @@ li.menubar__list{
     font-weight: 400;
 }
 
-.menubar__shopping_cart {
-    position: relative;
-    cursor: pointer;
-    
-}
-.menubar__shopping_cart--background{
-    padding: 10px;
-}
-.menubar__shopping_cart--background:hover{
-    background-color: rgb(255, 255, 244);
-    border-radius: 100%;
-}
-.menubar__shopping_cart--details{
-    width: 300px;
-    height: 400px;
-    background-color: black;
-    position: absolute;
-    bottom: -400px;
-    left: -269px;
-}
 
-.menubar__shopping_cart_count {
-    position: absolute;
-    text-align: center;
-    background-color: aqua;
-    color: black;
-    border-radius: 100%;
-    width: 15px;
-    height: 15px;
-    font-size: .7rem;
-    right: 0px;
-    top: 5px;
-}
-
-.menubar__shopping_cart--position {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .menubar__explore{
     position: relative;
@@ -187,7 +136,7 @@ ul.menubar__explore--items{
     transition-delay: 100ms;
     top: 40px;
 }
-.menubar__list:hover .menubar__megamenu{
+.menubar__list.menubar__list--megamenu:hover .menubar__megamenu{
     transform: scale(1, 1);
     transform-origin: top center;
 }
@@ -220,7 +169,7 @@ ul.menubar__items--subtype{
 }
 .menubar__megamenu {
     position: absolute;
-    /* width: 100vw; */
+    /* width: 100%; */
     left: 0;
     right: 0;
     height: 300px;
