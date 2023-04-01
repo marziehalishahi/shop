@@ -2,16 +2,11 @@
 import { ref, onMounted } from 'vue'
 import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
 
-onMounted(() => {
-    document.querySelector('.menubar__templates').addEventListener('mouseenter', function (event) {
-        document.querySelector('.menubar__megamenu').style.display = 'block'
-    })
-    document.querySelector('.menubar__templates').addEventListener('mouseleave', function (event) {
-        document.querySelector('.menubar__megamenu').style.display = 'none'
-    })
-})
-
-
+let cart = ref(false);
+const toggleCart = ()=>{
+    cart.value = !cart.value;
+}
+// onMounted(()=>{console.log(cart.value ? 'yeds' : 'ndo')})
 </script>
 
 <template>
@@ -26,10 +21,14 @@ onMounted(() => {
                 <li class="menubar__list"><span class="menubar__background">Beauty</span> </li>
                 <li class="menubar__list"><span class="menubar__background">Sport </span> </li>
                 <li class="menubar__list">
-                    <div class="menubar__templates"><span class="menubar__background"> Templates
+                    <div 
+                     class="menubar__templates">
+                        <span class="menubar__background"> Templates
                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
                     </span>
                     </div>
+                    <div class="menubar__megamenu "></div>
+
                 </li>
                 <li class="menubar__list menubar_list--explore">
                     <div class="menubar__explore">
@@ -40,7 +39,7 @@ onMounted(() => {
                             <li>Men </li>
                             <li>Women
                                 <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                <ul class="menubar__items--subtype "></ul>
+                                <ul class="menubar__items--subtype"></ul>
                             </li>
                             <li>Beauty</li>
                             <li>Sport</li>
@@ -52,24 +51,27 @@ onMounted(() => {
 
         <div class="menubar__interactions">
             <div>
-                <UserIcon class="w-8 h-8 text-black"></UserIcon>
+                <UserIcon class="w-6 h-6 text-black"></UserIcon>
             </div>
             <div>
 
-                <MagnifyingGlassIcon class="w-8 h-8 text-black"></MagnifyingGlassIcon>
+                <MagnifyingGlassIcon class="w-6 h-6 text-black"></MagnifyingGlassIcon>
 
             </div>
-            <div class="menubar__shopping_cart">
+            <div @click="toggleCart" class="menubar__shopping_cart" >
 
-                <ShoppingCartIcon class="w-8 h-8 text-black">
+                <div class='menubar__shopping_cart--background' >
+                    <ShoppingCartIcon class="w-6 h-6 text-black">
 
-                </ShoppingCartIcon>
+                    </ShoppingCartIcon>
+                </div>
+                
                 <div class="menubar__shopping_cart_count menubar__shopping_cart--position">1</div>
+                <div :class="{'menubar__shopping_cart--details' : cart}"></div>
             </div>
         </div>
 
     </nav>
-    <div class="menubar__megamenu"></div>
 </template>
 
 <style scoped>
@@ -101,7 +103,6 @@ nav.menubar {
     gap: 30px;
     font-size: 1.2rem;
     font-weight: 500;
-    position: relative;
 }
 span.menubar__background:hover{
     cursor: pointer;
@@ -111,10 +112,6 @@ span.menubar__background:hover{
 span.menubar__background{
     padding: .5rem 1rem;
 }
-
-/* body .menubar__templates:hover ~ .menubar__megamenu{
-    display: block;
-} */
 li.menubar__list{
     display: flex;
     align-items: center;
@@ -124,14 +121,31 @@ li.menubar__list{
 .menubar__interactions {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     font-size: 1.8rem;
     font-weight: 400;
-
 }
 
 .menubar__shopping_cart {
     position: relative;
+    cursor: pointer;
+    
+}
+.menubar__shopping_cart--background{
+    padding: 10px;
+}
+.menubar__shopping_cart--background:hover{
+    background-color: rgb(255, 255, 244);
+    border-radius: 100%;
+}
+.menubar__shopping_cart--details{
+    width: 300px;
+    height: 400px;
+    background-color: black;
+    position: absolute;
+    bottom: -400px;
+    left: -269px;
 }
 
 .menubar__shopping_cart_count {
@@ -140,11 +154,11 @@ li.menubar__list{
     background-color: aqua;
     color: black;
     border-radius: 100%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     font-size: .7rem;
-    right: -7px;
-    top: -6px;
+    right: 0px;
+    top: 5px;
 }
 
 .menubar__shopping_cart--position {
@@ -172,6 +186,10 @@ ul.menubar__explore--items{
     transition: all 100ms ease-in-out;
     transition-delay: 100ms;
     top: 40px;
+}
+.menubar__list:hover .menubar__megamenu{
+    transform: scale(1, 1);
+    transform-origin: top center;
 }
 
 .menubar__explore--items li {
@@ -202,12 +220,15 @@ ul.menubar__items--subtype{
 }
 .menubar__megamenu {
     position: absolute;
-    width: 100%;
+    /* width: 100vw; */
+    left: 0;
+    right: 0;
     height: 300px;
     background-color: black;
     top: 0;
     margin-top: 100px;
-    display: none;
+    transform: scale(1, 0);
+    transition: transform 100ms ease-in-out;
 }
 
 </style>
