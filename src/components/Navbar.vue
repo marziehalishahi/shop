@@ -1,7 +1,7 @@
 <script setup>
 import ShoppingCart from '@/ShoppingCart.vue'
 import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
-
+import Megamenu from '@/Megamenu.vue'
 
 // onMounted(()=>{console.log(cart.value ? 'yeds' : 'ndo')})
 </script>
@@ -24,8 +24,8 @@ import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from
                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
                     </span>
                     </div>
-                    <div class="menubar__megamenu"></div>
-
+                    
+                    <Megamenu></Megamenu>
                 </li>
                 <li class="menubar__list menubar_list--explore">
                     <div class="menubar__explore">
@@ -167,17 +167,6 @@ ul.menubar__items--subtype{
 .menubar__explore--items li:hover ul.menubar__items--subtype{
     transform: scale(1, 1)
 }
-.menubar__megamenu {
-    position: absolute;
-    /* width: 100%; */
-    left: 0;
-    right: 0;
-    height: 300px;
-    background-color: black;
-    top: 0;
-    margin-top: 100px;
-    transform: scale(1, 0);
-    transition: transform 100ms ease-in-out;
-}
+
 
 </style>
