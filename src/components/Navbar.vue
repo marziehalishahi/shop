@@ -1,8 +1,8 @@
 <script setup>
 import ShoppingCart from '@/ShoppingCart.vue'
-import { UserIcon, MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
+import { MagnifyingGlassIcon, ShoppingCartIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
 import Megamenu from '@/Megamenu.vue'
-
+import UserProfile from '@/UserProfile.vue'
 // onMounted(()=>{console.log(cart.value ? 'yeds' : 'ndo')})
 </script>
 
@@ -48,7 +48,7 @@ import Megamenu from '@/Megamenu.vue'
 
         <div class="menubar__interactions">
             <div>
-                <UserIcon class="w-6 h-6 text-black"></UserIcon>
+                <UserProfile></UserProfile>
             </div>
             <div>
 
