@@ -10,7 +10,7 @@ function toggle() {
 
 
 <template>
-    <UserIcon @click="toggle" class="w-6 h-6 text-black"></UserIcon>
+    <UserIcon @click="toggle" class= "w-6 h-6 p-0 text-black rounded-full cursor-pointer hover:bg-sky-100"></UserIcon>
     <div class="relative">
         <div :class="{ 'hidden': !profile }" class="absolute h-auto text-black bg-white rounded-lg shadow-md text w-36 top-8">
             <div class="flex justify-center">
@@ -62,7 +62,6 @@ function toggle() {
     flex-direction: row;
     justify-content: flex-start;
     border-radius:100%;
-
 
 }
 </style>

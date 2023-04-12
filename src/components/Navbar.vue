@@ -49,7 +49,7 @@ import UserProfile from '@/UserProfile.vue'
                                     <li>Home Demo 2</li>
                                     <li>Category Pages
                                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--subtype"> 
+                                        <ul class="menubar__items--category"> 
                                             <li>Category Pages 1</li>
                                             <li>Category Pages 2</li>
 
@@ -57,7 +57,7 @@ import UserProfile from '@/UserProfile.vue'
                                     </li>
                                     <li>Product Pages
                                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--subtype">
+                                        <ul class="menubar__items--Product">
                                             <li>Product Pages 1</li>
                                             <li>Product Pages 2</li>
 
@@ -69,7 +69,7 @@ import UserProfile from '@/UserProfile.vue'
                                     <li>Account page</li>
                                     <li>Other Pages
                                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--subtype">
+                                        <ul class="menubar__items--OtherPages">
                                             <li>About</li>
                                             <li>Contact us</li>
                                             <li>Login</li>
@@ -80,7 +80,7 @@ import UserProfile from '@/UserProfile.vue'
                                     </li>
                                     <li>Blog Page
                                         <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--subtype">
+                                        <ul class="menubar__items--BlogPage">
                                             <li>Blog Page</li>
                                             <li>Blog Single</li>
                                         </ul>
@@ -218,6 +218,67 @@ ul.menubar__items--subtype{
     border-radius: 8px;
 }
 .menubar__explore--items li:hover ul.menubar__items--subtype{
+    transform: scale(1, 1)
+}
+ul.menubar__items--category{
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color:white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+.menubar__items--subtype li:hover ul.menubar__items--category{
+    transform: scale(1, 1)
+}
+ul.menubar__items--Product{
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color:white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+.menubar__items--subtype li:hover ul.menubar__items--Product{
+    transform: scale(1, 1)
+}
+ul.menubar__items--OtherPages{
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color:white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+.menubar__items--subtype li:hover ul.menubar__items--OtherPages{
+    transform: scale(1, 1)
+}
+
+ul.menubar__items--BlogPage{
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color:white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+.menubar__items--subtype li:hover ul.menubar__items--BlogPage{
     transform: scale(1, 1)
 }
 

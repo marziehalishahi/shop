@@ -69,7 +69,7 @@ const toggleCart = () => {
 }
 
 .shopping_cart__background:hover {
-    background-color: rgb(255, 255, 244);
+    background-color: azure;
     border-radius: 100%;
 }
 
@@ -181,8 +181,8 @@ const toggleCart = () => {
 .shopping_cart__count {
     position: absolute;
     text-align: center;
-    background-color: aqua;
-    color: black;
+    background-color: rgb(145, 178, 240);
+    color: white;
     border-radius: 100%;
     width: 15px;
     height: 15px;
