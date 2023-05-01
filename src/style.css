@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .megamenu-column {
+      @apply flex flex-col gap-4 cursor-pointer;
+    }
+  }

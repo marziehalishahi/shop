@@ -1,27 +1,32 @@
 <script setup>
 </script>
 <template>
-    <div class="menubar__megamenu megamenu">
-        <div class="megamenu_container">
+    <div class="menubar__megamenu absolute top-0 left-0 right-0 h-[500px]
+     bg-white mt-[100px]
+        p-[70px] z-[2] scale-x-1 scale-y-0 transition-transform 
+        ease-linear duration-100 shadow-md">
+        <div class="w-[1200px] my-0 mx-auto">
             <div class="flex justify-between gap-5">
-                <div class="megamenu__column">
+                <div class="megamenu-column">
                     <h4>home page1</h4>
                     <div>home1</div>
-                    <div>
-                        <span>home2</span>
+                    <div class="w-full">
+                        <span class="w-[50%]">home2</span>
                         <span class="ml-1"></span>
-                        <span><a class="megamenu__column_home_new">new!</a></span>
+                        <span class="h-full w-[50%] inline-block">
+                            <a class="inline-flex justify-center w-full h-full p-0 px-2 py-1 m-auto text-sm text-center text-white bg-red-500 border-red-700 border-solid rounded-lg border-1"><span>new!</span> </a>
+                        </span>
                     </div>
                     <div>home3</div>
                     <div>
                         <span>home2</span>
                         <span class="ml-1"></span>
-                        <span><a class="megamenu__column_home_new">new!</a></span>
+                        <span><a class="bg-red-500 px-2 py-1 border-red-700 text-sm border-solid rounded-lg border-1 p-0 mr-[20px] w-[20px] h-[10px] text-center text-white">new!</a></span>
                     </div>
                     <div>home5</div>
                 </div>
 
-                <div class="megamenu__column">
+                <div class="megamenu-column">
                     <h4>home page2</h4>
                     <div>home1</div>
                     <div>home2</div>
@@ -30,7 +35,7 @@
                     <div>home5</div>
                 </div>
 
-                <div class="megamenu__column">
+                <div class="megamenu-column">
                     <h4>home page3</h4>
                     <div>home1</div>
                     <div>home2</div>
@@ -39,7 +44,7 @@
                     <div>home5</div>
                 </div>
 
-                <div class="megamenu__column">
+                <div class="megamenu-column">
                     <h4>home page4</h4>
                     <div>home1</div>
                     <div>home2</div>
@@ -48,11 +53,11 @@
                     <div>home5</div>
                 </div>
                 <div>
-                    <div class="megamenu_image_holder image_holder">
+                    <div class="flex justify-between cursor-pointer p-[26px] bg-blue-100">
                         <div class="image_holder__desc">
                             <h5>sale collection</h5>
                             <p class="text-4xl font-bold break-normal">up to 80% off retail</p>
-                            <div class="megamenue__ column2__show">
+                            <div class="inline megamenue__ column2__show hover:rounded-xl hover:inline-block">
                                 <a class="column2__show">show me all</a>
                             </div>
                         </div>
@@ -73,9 +78,8 @@
 </template>
 
 <style scoped>
-.menubar__megamenu {
+/* .menubar__megamenu {
     position: absolute;
-    /* width: 100%; */
     left: 0;
     right: 0;
     height: 500px;
@@ -87,7 +91,7 @@
     transition: transform 100ms ease-in-out;
     z-index: 2;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
+} */
 
 .megamenu_container {
     width: 1200px;
@@ -121,7 +125,7 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    background-color: rgb(239, 244, 248);
+    background-color: rgb(231, 234, 237);
     padding: 26px;
 }
 
