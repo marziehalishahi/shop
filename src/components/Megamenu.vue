@@ -1,9 +1,7 @@
 <script setup>
 </script>
 <template>
-    <div class="menubar__megamenu absolute top-0 left-0 right-0 h-[500px]
-     bg-white mt-[100px]
-        p-[70px] z-[2] scale-x-1 scale-y-0 transition-transform 
+    <div class="menubar__megamenu absolute top-0 left-0 right-0 h-[500px] bg-white mt-[100px] p-[70px] z-[2] scale-x-1 scale-y-0 transition-transform 
         ease-linear duration-100 shadow-md">
         <div class="w-[1200px] my-0 mx-auto">
             <div class="flex justify-between gap-5">
@@ -54,7 +52,7 @@
                 </div>
                 <div>
                     <div class="flex justify-between cursor-pointer p-[26px] bg-blue-100">
-                        <div class="image_holder__desc">
+                        <div class="flex flex-col justify-between">
                             <h5>sale collection</h5>
                             <p class="text-4xl font-bold break-normal">up to 80% off retail</p>
                             <div class="inline megamenue__ column2__show hover:rounded-xl hover:inline-block">

@@ -7,36 +7,35 @@ import UserProfile from '@/UserProfile.vue'
 </script>
 
 <template>
-    <nav class="menubar">
-        <div class="hamburger-menu__container">
+    <nav class=" bg-white flex justify-around items-center h-[100px] max-w-[1200px] my-0 mx-auto ">
+        <div class="relative hamburger-menu__container ">
             <div class="burger1"></div>
             <div class="burger2"></div>
             <div class="burger3"></div>
         </div>
 
-        
-        <div class="menubar__logo">
+
+        <div class="w-[130px]">
             <img src="../assets/images/images.svg">
         </div>
-        <div class="h-full menubar__container">
-            <ul class="h-full menubar__items">
-                <li class="menubar__list"><span class="menubar__background">Men</span> </li>
-                <li class="menubar__list"><span class="menubar__background">Women </span> </li>
-                <li class="menubar__list"><span class="menubar__background">Beauty</span> </li>
-                <li class="menubar__list"><span class="menubar__background">Sport </span> </li>
-                <li class="menubar__list menubar__list--megamenu">
-                    <div 
-                     class="menubar__templates">
+        <div class="flex justify-center h-full">
+            <ul class="h-full  flex justify-center items-center gap-[30px] font-[500] text-[1.2rem]">
+                <li class="flex items-center h-[100%]"><span class="menubar__background">Men</span> </li>
+                <li class="flex items-center h-[100%]"><span class="menubar__background">Women </span> </li>
+                <li class="flex items-center h-[100%]"><span class="menubar__background">Beauty</span> </li>
+                <li class="flex items-center h-[100%]"><span class="menubar__background">Sport </span> </li>
+                <li class="flex items-center h-[100%] menubar__list--megamenu">
+                    <div class="menubar__templates">
                         <span class="menubar__background"> Templates
-                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                    </span>
+                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                        </span>
                     </div>
-                    
+
                     <Megamenu></Megamenu>
                 </li>
                 <li class="menubar__list menubar_list--explore">
                     <div class="menubar__explore">
-                        <span class="menubar__background">Explore 
+                        <span class="menubar__background">Explore
                             <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
                         </span>
                         <ul class="menubar__explore--items">
@@ -44,48 +43,53 @@ import UserProfile from '@/UserProfile.vue'
                             <li>Women
                                 <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
                                 <div>
-                                    <ul class="menubar__items--subtype">
-                                    <li>Home Demo 1</li>
-                                    <li>Home Demo 2</li>
-                                    <li>Category Pages
-                                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--category"> 
-                                            <li>Category Pages 1</li>
-                                            <li>Category Pages 2</li>
+                                    <ul
+                                        class="menubar__items--subtype absolute right-[-151px] w-[150px] scale-x-0 scale-y-1 transition-transform[100ms] ease-in-out origin-left-center bg-white h-auto shadow-md rounded[8px] ">
+                                        <li>Home Demo 1</li>
+                                        <li>Home Demo 2</li>
+                                        <li>Category Pages
+                                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                                            <ul
+                                                class="menubar__items--category absolute right-[-151px] w-[150px] scale-x-0 scale-y-1 transition-transform[100ms] ease-in-out origin-left-center bg-white h-auto shadow-md rounded[8px]  ">
+                                                <li>Category Pages 1</li>
+                                                <li>Category Pages 2</li>
 
-                                        </ul>
-                                    </li>
-                                    <li>Product Pages
-                                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--Product">
-                                            <li>Product Pages 1</li>
-                                            <li>Product Pages 2</li>
+                                            </ul>
+                                        </li>
+                                        <li>Product Pages
+                                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                                            <ul
+                                                class="menubar__items--Product absolute right-[-151px] w-[150px] scale-x-0 scale-y-1 transition-transform[100ms] ease-in-out origin-left-center bg-white h-auto shadow-md rounded[8px]">
+                                                <li>Product Pages 1</li>
+                                                <li>Product Pages 2</li>
 
-                                        </ul>
-                                    </li>
-                                    <li>Cart Page</li>
-                                    <li>Checkout Page</li>
-                                    <li>Search Page</li>
-                                    <li>Account page</li>
-                                    <li>Other Pages
-                                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--OtherPages">
-                                            <li>About</li>
-                                            <li>Contact us</li>
-                                            <li>Login</li>
-                                            <li>Signup</li>
-                                            <li>Subscription</li>
+                                            </ul>
+                                        </li>
+                                        <li>Cart Page</li>
+                                        <li>Checkout Page</li>
+                                        <li>Search Page</li>
+                                        <li>Account page</li>
+                                        <li>Other Pages
+                                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                                            <ul
+                                                class="menubar__items--OtherPages absolute right-[-151px] w-[150px] scale-x-0 scale-y-1 transition-transform[100ms] ease-in-out origin-left-center bg-white h-auto shadow-md rounded[8px]">
+                                                <li>About</li>
+                                                <li>Contact us</li>
+                                                <li>Login</li>
+                                                <li>Signup</li>
+                                                <li>Subscription</li>
 
-                                        </ul>
-                                    </li>
-                                    <li>Blog Page
-                                        <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
-                                        <ul class="menubar__items--BlogPage">
-                                            <li>Blog Page</li>
-                                            <li>Blog Single</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                            </ul>
+                                        </li>
+                                        <li>Blog Page
+                                            <ChevronDownIcon class="inline-block w-4 h-4 text-gray-400" />
+                                            <ul
+                                                class="menubar__items--BlogPage absolute right-[-151px] w-[150px] scale-x-0 scale-y-1 transition-transform[100ms] ease-in-out origin-left-center bg-white h-auto shadow-md rounded[8px]">
+                                                <li>Blog Page</li>
+                                                <li>Blog Single</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                             <li>Beauty</li>
@@ -96,7 +100,7 @@ import UserProfile from '@/UserProfile.vue'
             </ul>
         </div>
 
-        <div class="menubar__interactions">
+        <div class=" flex justify-center items-center gap-[30px]  text-[1.8rem] font-medium">
             <div>
                 <UserProfile></UserProfile>
             </div>
@@ -105,7 +109,7 @@ import UserProfile from '@/UserProfile.vue'
                 <MagnifyingGlassIcon class="w-6 h-6 text-black"></MagnifyingGlassIcon>
 
             </div>
-            <ShoppingCart/>
+            <ShoppingCart />
         </div>
 
     </nav>
@@ -141,15 +145,18 @@ nav.menubar {
     font-size: 1.2rem;
     font-weight: 500;
 }
-span.menubar__background:hover{
+
+span.menubar__background:hover {
     cursor: pointer;
     background-color: azure;
     border-radius: 2rem;
 }
-span.menubar__background{
+
+span.menubar__background {
     padding: .5rem 1rem;
 }
-li.menubar__list{
+
+li.menubar__list {
     display: flex;
     align-items: center;
     height: 100%;
@@ -166,17 +173,20 @@ li.menubar__list{
 
 
 
-.menubar__explore{
+.menubar__explore {
     position: relative;
 }
-.menubar_list--explore:hover .menubar__explore--items{
+
+.menubar_list--explore:hover .menubar__explore--items {
     height: auto;
     width: 120px;
 }
-.menubar_list--explore:hover .menubar__explore--items li{
+
+.menubar_list--explore:hover .menubar__explore--items li {
     opacity: 1;
 }
-ul.menubar__explore--items{
+
+ul.menubar__explore--items {
     position: absolute;
     height: 0px;
     width: 0px;
@@ -187,7 +197,8 @@ ul.menubar__explore--items{
     top: 40px;
     border-radius: 8px;
 }
-.menubar__list.menubar__list--megamenu:hover .menubar__megamenu{
+
+.menubar__list.menubar__list--megamenu:hover .menubar__megamenu {
     transform: scale(1, 1);
     transform-origin: top center;
 }
@@ -205,92 +216,102 @@ ul.menubar__explore--items{
     background-color: rgb(238, 247, 247);
     cursor: pointer;
 }
-ul.menubar__items--subtype{
+
+ul.menubar__items--subtype {
     position: absolute;
     right: -151px;
     width: 150px;
     transform: scale(0, 1);
     transition: transform 100ms ease-in-out;
     transform-origin: left center;
-    background-color:white;
+    background-color: white;
     height: auto;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     border-radius: 8px;
 }
-.menubar__explore--items li:hover ul.menubar__items--subtype{
-    transform: scale(1, 1)
-}
-ul.menubar__items--category{
-    position: absolute;
-    right: -151px;
-    width: 150px;
-    transform: scale(0, 1);
-    transition: transform 100ms ease-in-out;
-    transform-origin: left center;
-    background-color:white;
-    height: auto;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    border-radius: 8px;
-}
-.menubar__items--subtype li:hover ul.menubar__items--category{
-    transform: scale(1, 1)
-}
-ul.menubar__items--Product{
-    position: absolute;
-    right: -151px;
-    width: 150px;
-    transform: scale(0, 1);
-    transition: transform 100ms ease-in-out;
-    transform-origin: left center;
-    background-color:white;
-    height: auto;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    border-radius: 8px;
-}
-.menubar__items--subtype li:hover ul.menubar__items--Product{
-    transform: scale(1, 1)
-}
-ul.menubar__items--OtherPages{
-    position: absolute;
-    right: -151px;
-    width: 150px;
-    transform: scale(0, 1);
-    transition: transform 100ms ease-in-out;
-    transform-origin: left center;
-    background-color:white;
-    height: auto;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    border-radius: 8px;
-}
-.menubar__items--subtype li:hover ul.menubar__items--OtherPages{
+
+.menubar__explore--items li:hover ul.menubar__items--subtype {
     transform: scale(1, 1)
 }
 
-ul.menubar__items--BlogPage{
+ul.menubar__items--category {
     position: absolute;
     right: -151px;
     width: 150px;
     transform: scale(0, 1);
     transition: transform 100ms ease-in-out;
     transform-origin: left center;
-    background-color:white;
+    background-color: white;
     height: auto;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     border-radius: 8px;
 }
-.menubar__items--subtype li:hover ul.menubar__items--BlogPage{
+
+.menubar__items--subtype li:hover ul.menubar__items--category {
     transform: scale(1, 1)
 }
 
-.menubar__container{
+ul.menubar__items--Product {
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color: white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+
+.menubar__items--subtype li:hover ul.menubar__items--Product {
+    transform: scale(1, 1)
+}
+
+ul.menubar__items--OtherPages {
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color: white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+
+.menubar__items--subtype li:hover ul.menubar__items--OtherPages {
+    transform: scale(1, 1)
+}
+
+ul.menubar__items--BlogPage {
+    position: absolute;
+    right: -151px;
+    width: 150px;
+    transform: scale(0, 1);
+    transition: transform 100ms ease-in-out;
+    transform-origin: left center;
+    background-color: white;
+    height: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+}
+
+.menubar__items--subtype li:hover ul.menubar__items--BlogPage {
+    transform: scale(1, 1)
+}
+
+.menubar__container {
     display: flex;
     justify-content: center;
 }
 
-.hamburger-menu__container{
+.hamburger-menu__container {
     /* opacity: 0; */
     position: relative;
 }
+
 /* .hamburger-menu__container span{
     margin-bottom: 50px;
 } */
@@ -302,30 +323,31 @@ ul.menubar__items--BlogPage{
     background-color: black;
     z-index: 1000;
 }
-.hamburger-menu__container .burger1::after{
+
+.hamburger-menu__container .burger1::after {
     top: 10px;
     left: -100px;
 }
 
-.hamburger-menu__container .burger2::after{
+.hamburger-menu__container .burger2::after {
     top: 14px;
     left: -100px;
 }
 
-.hamburger-menu__container .burger3::after{
+.hamburger-menu__container .burger3::after {
     top: 19px;
     left: -100px;
 }
 
 @media screen and (max-width: 1024px) {
 
-    .menubar__container, .menubar__logo{
+    .menubar__container,
+    .menubar__logo {
         display: none;
     }
 
-    nav.menubar{
+    nav.menubar {
         justify-content: flex-end;
         padding-right: 10px;
     }
-}
-</style>
+}</style>
